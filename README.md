@@ -102,8 +102,33 @@ Pada The Refonence merupakan pusat Router jadi semua ip dari subnet diasiggn ke 
 
 ![image](https://github.com/zunia25/Modul-4/blob/main/The%20Megical.png)
 
+## The Instrument
+- 0.0.0.0/0 via 10.8.0.17
+- 10.8.0.20/30 via 10.8.0.22
+- 10.8.1.128/25 via 10.8.0.22
+- 10.8.1.0/25 via 10.8.0.22
+- 10.8.0.12/30 via 10.8.0.14
+- 10.8.3.0/24 via 10.8.0.14
+- 10.8.4.0/23 via 10.8.0.14
+- 10.8.0.28/30 via 10.8.0.14
 
+![image](https://github.com/zunia25/Modul-4/blob/main/The%20Instrument.png)
 
+## The Poofound
+- 0.0.0.0/0 via 10.8.0.21
+
+![image](https://github.com/zunia25/Modul-4/blob/main/The%20Poofound.png)
+
+## The Etefist
+- 0.0.0.0/0 via 10.8.0.13
+- 10.8.0.28/30 via 10.8.3.3
+
+![image](https://github.com/zunia25/Modul-4/blob/main/The%20Etefist.png)
+
+## The Queen
+- 0.0.0.0/0 via 10.8.3.1
+
+![image](https://github.com/zunia25/Modul-4/blob/main/The%20Queen.png)
 
 # Testing
 Hasil dari message tiap node.
