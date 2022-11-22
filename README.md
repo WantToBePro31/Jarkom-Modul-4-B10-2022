@@ -97,6 +97,19 @@ Pada The Refonence merupakan pusat Router jadi semua ip dari subnet diasiggn ke 
 
 0.0.0.0 berarti mengambil semua pesan dan diarahkan ke next hop.
 
+## The Megical
+- 0.0.0.0/0 via 10.8.0.25
+
+![image](https://github.com/zunia25/Modul-4/blob/main/The%20Megical.png)
+
+
+
+
+# Testing
+Hasil dari message tiap node.
+
+![image](https://github.com/zunia25/Modul-4/blob/main/Testing.png)
+
 
 
 
