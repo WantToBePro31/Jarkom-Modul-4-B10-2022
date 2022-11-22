@@ -52,7 +52,50 @@ Pada server & Client ditambahkan juga gateway yang mengarah ke router terdekat.
 Lakukan berulang-ulang pada semua node.
 
 # Routing 
-Pada routing berikut adalah config yang berada pada router.
+Pada routing berikut adalah config yang berada pada router. Untuk langkah nya bisa masuk kedalam router, lalu menekan menu static dan menambahkan data yang diinginkan.
+
+## The Refonance
+- 10.8.0.4/30 via 10.8.0.10
+- 10.8.0.64/26 via 10.8.0.10
+- 10.8.8.0/22 via 10.8.0.10
+- 10.8.0.0/30 via 10.8.0.10
+- 10.8.2.0/24 via 10.8.0.10
+- 10.8.0.24/30 via 10.8.0.26
+- 10.8.6.0/23 via 10.8.0.26
+- 10.8.0.16/30 via 10.8.0.18
+- 10.8.0.128/30 via 10.8.0.18
+- 10.8.0.20/30 via 10.8.0.18
+- 10.8.1.128/25 via 10.8.0.18
+- 10.8.1.0/25 via 10.8.0.18
+- 10.8.0.12/30 via 10.8.0.18
+- 10.8.4.0/23 via 10.8.0.18
+- 10.8.3.0/24 via 10.8.0.18
+- 10.8.0.28/30 via 10.8.0.18
+
+![image](https://github.com/zunia25/Modul-4/blob/main/The%20Refonance.png)
+
+Pada The Refonence merupakan pusat Router jadi semua ip dari subnet diasiggn ke Router The Refonence agar semua bisa terhubung.
+
+## The Order
+- 0.0.0.0/0 via 10.8.0.9
+- 10.8.8.0/22 via 10.8.0.6
+- 10.8.0.0/30 via 10.8.0.6
+- 10.8.2.0/24 via 10.8.0.6
+
+![image](https://github.com/zunia25/Modul-4/blob/main/The%20Order.png)
+
+##The Minister
+- 0.0.0.0/0 via 10.8.0.5
+- 10.8.2.0/24 via 10.8.0.2
+
+![image](https://github.com/zunia25/Modul-4/blob/main/The%20Minister.png)
+
+##The Daundless
+- 0.0.0.0/0 via 10.8.0.1
+
+![image](https://github.com/zunia25/Modul-4/blob/main/The%20Daundless.png)
+
+0.0.0.0 berarti mengambil semua pesan dan diarahkan ke next hop.
 
 
 
