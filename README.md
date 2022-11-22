@@ -84,13 +84,13 @@ Pada The Refonence merupakan pusat Router jadi semua ip dari subnet diasiggn ke 
 
 ![image](https://github.com/zunia25/Modul-4/blob/main/The%20Order.png)
 
-##The Minister
+## The Minister
 - 0.0.0.0/0 via 10.8.0.5
 - 10.8.2.0/24 via 10.8.0.2
 
 ![image](https://github.com/zunia25/Modul-4/blob/main/The%20Minister.png)
 
-##The Daundless
+## The Daundless
 - 0.0.0.0/0 via 10.8.0.1
 
 ![image](https://github.com/zunia25/Modul-4/blob/main/The%20Daundless.png)
