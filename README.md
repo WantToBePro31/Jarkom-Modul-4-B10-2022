@@ -44,7 +44,7 @@ Karena default hanya memiliki 2 port ethernet, maka kita bisa menambah port pada
 ## config ip pada Node
 ![image](https://github.com/zunia25/Modul-4/blob/main/Router.png)
 
-Contoh pada The Minister, kita menambahkan IP dan Subnet Mask sesuai dengan pembagian yang telah dilakukan, dengan IP ditambah 1 dari subnetnya.
+Contoh pada The Minister, kita menambahkan IP dan Subnet Mask sesuai dengan pembagian yang telah dilakukan, dengan IP ditambah 1 dari subnetnya. dan jangan lupa untuk di on kan pada port nya.
 
 Pada server & Client ditambahkan juga gateway yang mengarah ke router terdekat.
 ![image](https://github.com/zunia25/Modul-4/blob/main/Client.png)
