@@ -21,34 +21,41 @@ Dalam mengerjakan soal ini, kami menggunakan teknik VLSM dengan menggunakan CPT,
 # VLSM - CPT
 ## Pembagian Subnet
 Hal pertama yang kami lakukan adalah dengan menentukan subnet yang ada pada topologi. Dikarenakan metode yang dipakai adalah VLSM. Kami melingkari tiap host yang terhubung pada interface router dan menghitung IP yang dibutuhkan. Berikut adalah gambaran pembagian subnetnya
+
 ![image](https://github.com/zunia25/Modul-4/blob/main/VLSM-CPT.png)
 
 ## Jumlah IP
 Setelah melakukan pembagian subnet kita melakukan penjumlahan pada ip, Sehingga didapatkan hasil penjumlahan ip berikut :
+
 ![image](https://github.com/zunia25/Modul-4/blob/main/Tabel2.png)
 
 ## VSLM-Tree
 Setelah mendapatkan penjumlahan ip kita membuat tree yang terdapat pada topologi. pada subnet memiliki NID 10.8.0.0 dengan netmask /20 sehingga pembagian IP berdasarkan NID dan Netmask yang di dapat.
+
 ![image](https://github.com/zunia25/Modul-4/blob/main/VLSM-Tree.png)
 
 Pada VLSM ini diturunkan sesuai dengan netmask atasnya sehingga ketika /20 akan diturunkan menjadi /21, lakukan secara berulang-ulang sampai node semua terpenuhi.
 
 ## Pembagian IP
 Kemudian kita bagi dengan tetap menggunakan ip perfix `10.8` . hasil pembagian seperti berikut :
+
 ![image](https://github.com/zunia25/Modul-4/blob/main/Tabel1.png)
 
 
 # Config VSLM
 ## Menambah Ethernet / Port
 Karena default hanya memiliki 2 port ethernet, maka kita bisa menambah port pada tab physical
+
 ![image](https://github.com/zunia25/Modul-4/blob/main/Port.png)
 
 ## config ip pada Node
+
 ![image](https://github.com/zunia25/Modul-4/blob/main/Router.png)
 
 Contoh pada The Minister, kita menambahkan IP dan Subnet Mask sesuai dengan pembagian yang telah dilakukan, dengan IP ditambah 1 dari subnetnya. dan jangan lupa untuk di on kan pada port nya.
 
 Pada server & Client ditambahkan juga gateway yang mengarah ke router terdekat.
+
 ![image](https://github.com/zunia25/Modul-4/blob/main/Client.png)
 
 Lakukan berulang-ulang pada semua node.
