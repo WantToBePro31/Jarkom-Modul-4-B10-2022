@@ -148,6 +148,26 @@ Hasil dari message tiap node.
 ## Penggabungan Subnet
 Kita melakukan penggabungan subnet-subnet paling bawah dalam topologi yaitu dimulai dari subnet yang paling jauh dengan cloud/nat hingga hanya memiliki 1 subnet (induk).
 
+![image](https://user-images.githubusercontent.com/67154280/203823347-02d5c9cb-6757-4cf5-ae5c-27098f1cbf16.png)
+
+![image](https://user-images.githubusercontent.com/67154280/203823270-e0d73eb8-c4ec-4894-b6da-c0af20b3d6f6.png)
+
+![image](https://user-images.githubusercontent.com/67154280/203823201-235bbd58-e58f-471b-b2c1-4499d43ec977.png)
+
+![image](https://user-images.githubusercontent.com/67154280/203823162-b3b40dff-eb85-4965-8084-321ea1fa9660.png)
+
+![image](https://user-images.githubusercontent.com/67154280/203823114-561ce1e4-94e9-4241-8ed0-2b52da38952b.png)
+
+![image](https://user-images.githubusercontent.com/67154280/203823035-2818d042-6d18-4518-8d1f-84f3f60f4f31.png)
+
+![image](https://user-images.githubusercontent.com/67154280/203822948-f6075249-66ee-4691-b3db-121a4eef8410.png)
+
+![image](https://user-images.githubusercontent.com/67154280/203822821-58b60032-00ee-4b4a-bfea-cf9900509d4c.png)
+
+![image](https://user-images.githubusercontent.com/67154280/203822776-4b69f685-19b2-4a36-984f-810c31ea6098.png)
+
+![image](https://user-images.githubusercontent.com/67154280/203822575-b2f83376-14a9-466f-8bd2-6a28ad3047dd.png)
+
 ## CIDR-Tree
 Setelah mendapatkan penggabungan subnet, kita membuat tree yang terdapat pada topologi. Pada paling atas (parent) memiliki subnet dengan NID 10.8.0.0 dengan netmask /16.
 
