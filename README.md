@@ -553,6 +553,7 @@ Setelah itu akan dilakukan routing pada GNS3 agar semua router, server, dan clie
   
 ## Testing
 Testing dilakukan pada masing-masing client dan dikatakan berhasil jika client yang berjarak jauh dari router/server/client lain dapat melakukan ping pada router/server/client tersebut.
+
 ![image](https://user-images.githubusercontent.com/67154280/203810610-01cf476c-c090-4674-bdd7-9b223bfb9ba2.png)
 
 ![image](https://user-images.githubusercontent.com/67154280/203811201-a71d374c-e477-4b48-a272-1cc4dbec6a0f.png)
