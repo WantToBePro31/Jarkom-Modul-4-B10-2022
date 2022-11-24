@@ -1,10 +1,10 @@
 # Jarkom-Modul-4-B10-2022
 
-# Anggota Kelompok
-Anggota  | NRP
----------|-------
-Zunia Aswaroh | 5025201058
-Frederick Wijayadi Susilo | 5025201111
+## Kelompok B10
+| Name                      | NRP        | 
+| ------------------------- | ---------- |
+| Frederick Wijayadi Susilo | 5025201111 |
+| Zunia Aswaroh             | 5025201058 |
 
 IP Prefix Kelompok: `10.8`
 
@@ -25,19 +25,19 @@ Hal pertama yang kami lakukan adalah dengan menentukan subnet yang ada pada topo
 ![image](https://github.com/zunia25/Modul-4/blob/main/VLSM-CPT.png)
 
 ## Jumlah IP
-Setelah melakukan pembagian subnet kita melakukan penjumlahan pada ip, Sehingga didapatkan hasil penjumlahan ip berikut :
+Setelah melakukan pembagian subnet kita melakukan penjumlahan pada IP, sehingga didapatkan hasil penjumlahan ip berikut :
 
 ![image](https://github.com/zunia25/Modul-4/blob/main/Tabel2.png)
 
 ## VSLM-Tree
-Setelah mendapatkan penjumlahan ip kita membuat tree yang terdapat pada topologi. pada subnet memiliki NID 10.8.0.0 dengan netmask /20 sehingga pembagian IP berdasarkan NID dan Netmask yang di dapat.
+Setelah mendapatkan penjumlahan IP kita membuat tree yang terdapat pada topologi. Pada subnet memiliki NID 10.8.0.0 dengan netmask /20 sehingga pembagian IP berdasarkan NID dan Netmask yang di dapat.
 
 ![image](https://github.com/zunia25/Modul-4/blob/main/VLSM-Tree.png)
 
 Pada VLSM ini diturunkan sesuai dengan netmask atasnya sehingga ketika /20 akan diturunkan menjadi /21, lakukan secara berulang-ulang sampai node semua terpenuhi.
 
 ## Pembagian IP
-Kemudian kita bagi dengan tetap menggunakan ip perfix `10.8` . hasil pembagian seperti berikut :
+Kemudian kita bagi dengan tetap menggunakan IP perfix `10.8` . hasil pembagian seperti berikut :
 
 ![image](https://github.com/zunia25/Modul-4/blob/main/Tabel1.png)
 
@@ -48,8 +48,7 @@ Karena default hanya memiliki 2 port ethernet, maka kita bisa menambah port pada
 
 ![image](https://github.com/zunia25/Modul-4/blob/main/Port.png)
 
-## config ip pada Node
-
+## Config IP pada Node
 ![image](https://github.com/zunia25/Modul-4/blob/main/Router.png)
 
 Contoh pada The Minister, kita menambahkan IP dan Subnet Mask sesuai dengan pembagian yang telah dilakukan, dengan IP ditambah 1 dari subnetnya. dan jangan lupa untuk di on kan pada port nya.
@@ -63,7 +62,7 @@ Lakukan berulang-ulang pada semua node.
 # Routing 
 Pada routing berikut adalah config yang berada pada router. Untuk langkah nya bisa masuk kedalam router, lalu menekan menu static dan menambahkan data yang diinginkan.
 
-## The Refonance
+## The Reference
 - 10.8.0.4/30 via 10.8.0.10
 - 10.8.0.64/26 via 10.8.0.10
 - 10.8.8.0/22 via 10.8.0.10
@@ -83,7 +82,7 @@ Pada routing berikut adalah config yang berada pada router. Untuk langkah nya bi
 
 ![image](https://github.com/zunia25/Modul-4/blob/main/The%20Refonance.png)
 
-Pada The Refonence merupakan pusat Router jadi semua ip dari subnet diasiggn ke Router The Refonence agar semua bisa terhubung.
+Pada The Reference merupakan pusat Router jadi semua IP dari subnet diasiggn ke Router The Reference agar semua bisa terhubung.
 
 ## The Order
 - 0.0.0.0/0 via 10.8.0.9
@@ -106,7 +105,7 @@ Pada The Refonence merupakan pusat Router jadi semua ip dari subnet diasiggn ke 
 
 0.0.0.0 berarti mengambil semua pesan dan diarahkan ke next hop.
 
-## The Megical
+## The Magical
 - 0.0.0.0/0 via 10.8.0.25
 
 ![image](https://github.com/zunia25/Modul-4/blob/main/The%20Megical.png)
@@ -123,12 +122,12 @@ Pada The Refonence merupakan pusat Router jadi semua ip dari subnet diasiggn ke 
 
 ![image](https://github.com/zunia25/Modul-4/blob/main/The%20Instrument.png)
 
-## The Poofound
+## The Profound
 - 0.0.0.0/0 via 10.8.0.21
 
 ![image](https://github.com/zunia25/Modul-4/blob/main/The%20Poofound.png)
 
-## The Etefist
+## The Firefist
 - 0.0.0.0/0 via 10.8.0.13
 - 10.8.0.28/30 via 10.8.3.3
 
@@ -146,7 +145,418 @@ Hasil dari message tiap node.
 
 # CIDR - GNS3
 
+## Penggabungan Subnet
+Kita melakukan penggabungan subnet-subnet paling bawah dalam topologi yaitu dimulai dari subnet yang paling jauh dengan cloud/nat hingga hanya memiliki 1 subnet (induk).
 
+## CIDR-Tree
+Setelah mendapatkan penggabungan subnet, kita membuat tree yang terdapat pada topologi. Pada paling atas (parent) memiliki subnet dengan NID 10.8.0.0 dengan netmask /16.
 
+![image](https://user-images.githubusercontent.com/67154280/203804063-b79872d7-7a69-431b-abdb-485fa2790634.png)
+
+## Pembagian IP
+Kemudian kita bagi dengan tetap menggunakan ip perfix `10.8`. Hasil pembagian seperti berikut :
+
+![image](https://user-images.githubusercontent.com/67154280/203805313-a03f5578-da23-4060-a4a2-2fae4fd4117a.png)
+
+## Eth Configuration
+Pada masing-masing node akan dilakukan network configuration, kita melakukan assignment dengan IP yang telah ditetapkan sesuai dengan subnet
+
+- The Reference
+  ```shell
+  auto lo
+  iface lo inet loopback
+
+  auto eth0
+  iface eth0 inet dhcp
+
+  auto eth1
+  iface eth1 inet static
+  address 10.8.68.1
+  netmask 255.255.255.252
+
+  auto eth2
+  iface eth2 inet static
+  address 10.8.66.1
+  netmask 255.255.255.252
+
+  auto eth3
+  iface eth3 inet static
+  address 10.8.32.1
+  netmask 255.255.255.252
+
+  auto eth4
+  iface eth4 inet static
+  address 10.8.160.1
+  netmask 255.255.255.252
+  ```
+
+- The Order
+  ```shell
+  auto lo
+  iface lo inet loopback
+
+  auto eth0
+  iface eth0 inet static
+  address 10.8.160.2
+  netmask 255.255.255.252
+  gateway 10.8.160.1
+
+  auto eth1
+  iface eth1 inet static
+  address 10.8.136.1
+  netmask 255.255.255.252
+
+  auto eth2
+  iface eth2 inet static
+  address 10.8.144.1
+  netmask 255.255.255.192
+  ```
+  
+- Ashaf
+  ```shell
+  auto eth0
+  iface eth0 inet static
+  address 10.8.144.2
+  netmask 255.255.255.192
+  gateway 10.8.144.1
+  ```
+  
+- The Minister
+  ```shell
+  auto lo
+  iface lo inet loopback
+
+  auto eth0
+  iface eth0 inet static
+  address 10.8.136.2
+  netmask 255.255.255.252
+  gateway 10.8.136.1
+
+  auto eth1
+  iface eth1 inet static
+  address 10.8.133.1
+  netmask 255.255.255.252
+
+  auto eth2
+  iface eth2 inet static
+  address 10.8.128.1
+  netmask 255.255.252.0
+  ```
+  
+- Guidessu
+  ```shell
+  auto eth0
+  iface eth0 inet static
+  address 10.8.128.2
+  netmask 255.255.252.0
+  gateway 10.8.128.1
+  ```
+  
+- The Daundless
+  ```shell
+  auto lo
+  iface lo inet loopback
+
+  auto eth0
+  iface eth0 inet static
+  address 10.8.133.2
+  netmask 255.255.255.252
+  gateway 10.8.133.1
+
+  auto eth1
+  iface eth1 inet static
+  address 10.8.132.1
+  netmask 255.255.255.0
+  ```
+  
+- Phanora
+  ```shell
+  auto eth0
+  iface eth0 inet static
+  address 10.8.132.2
+  netmask 255.255.255.0
+  gateway 10.8.132.1
+  ```
+  
+- Johan
+  ```shell
+  auto eth0
+  iface eth0 inet static
+  address 10.8.132.3
+  netmask 255.255.255.0
+  gateway 10.8.132.1
+  ```
+  
+- The Beast
+  ```shell
+  auto eth0
+  iface eth0 inet static
+  address 10.8.68.2
+  netmask 255.255.255.252
+  gateway 10.8.68.1
+  ```
+  
+- The Magical
+  ```shell
+  auto lo
+  iface lo inet loopback
+
+  auto eth0
+  iface eth0 inet static
+  address 10.8.66.2
+  netmask 255.255.255.252
+  gateway 10.8.66.1
+
+  auto eth1
+  iface eth1 inet static
+  address 10.8.64.1
+  netmask 255.255.254.0
+  ```
+  
+- Haines
+  ```shell
+  auto eth0
+  iface eth0 inet static
+  address 10.8.64.2
+  netmask 255.255.254.0
+  gateway 10.8.64.1
+  ```
+  
+- Corvekt
+  ```shell
+  auto eth0
+  iface eth0 inet static
+  address 10.8.64.3
+  netmask 255.255.254.0
+  gateway 10.8.64.1
+  ```
+  
+- The Instrument
+  ```shell
+  auto lo
+  iface lo inet loopback
+
+  auto eth0
+  iface eth0 inet static
+  address 10.8.32.2
+  netmask 255.255.255.252
+  gateway 10.8.32.1
+
+  auto eth1
+  iface eth1 inet static
+  address 10.8.17.1
+  netmask 255.255.255.252
+
+  auto eth2
+  iface eth2 inet static
+  address 10.8.4.1
+  netmask 255.255.255.252
+
+  auto eth3
+  iface eth3 inet static
+  address 10.8.8.1
+  netmask 255.255.255.128
+  ```
+  
+- Matt Cugat
+  ```shell
+  auto eth0
+  iface eth0 inet static
+  address 10.8.8.2
+  netmask 255.255.255.128
+  gateway 10.8.8.1
+  ```
+  
+- The Profound
+  ```shell
+  auto lo
+  iface lo inet loopback
+
+  auto eth0
+  iface eth0 inet static
+  address 10.8.17.2
+  netmask 255.255.255.252
+  gateway 10.8.17.1
+
+  auto eth1
+  iface eth1 inet static
+  address 10.8.16.1
+  netmask 255.255.255.128
+
+  auto eth2
+  iface eth2 inet static
+  address 10.8.16.129
+  netmask 255.255.255.128
+  ```
+  
+- Spendrow
+  ```shell
+  auto eth0
+  iface eth0 inet static
+  address 10.8.16.2
+  netmask 255.255.255.128
+  gateway 10.8.16.1
+  ```
+  
+- Helga
+  ```shell
+  auto eth0
+  iface eth0 inet static
+  address 10.8.16.130
+  netmask 255.255.255.128
+  gateway 10.8.16.129
+  ```
+  
+- The Firefist
+  ```shell
+  auto lo
+  iface lo inet loopback
+
+  auto eth0
+  iface eth0 inet static
+  address 10.8.4.2
+  netmask 255.255.255.252
+  gateway 10.8.4.1
+
+  auto eth1
+  iface eth1 inet static
+  address 10.8.2.1
+  netmask 255.255.254.0
+
+  auto eth2
+  iface eth2 inet static
+  address 10.8.0.1
+  netmask 255.255.255.0
+  ```
+  
+- Oakleave
+  ```shell
+  auto eth0
+  iface eth0 inet static
+  address 10.8.2.2
+  netmask 255.255.254.0
+  gateway 10.8.2.1
+  ```
+  
+- Keith
+  ```shell
+  auto eth0
+  iface eth0 inet static
+  address 10.8.0.3
+  netmask 255.255.255.0
+  gateway 10.8.0.1
+  ```
+  
+- The Queen
+  ```shell
+  auto lo
+  iface lo inet loopback
+
+  auto eth0
+  iface eth0 inet static
+  address 10.8.0.2
+  netmask 255.255.255.0
+  gateway 10.8.0.1
+
+  auto eth1
+  iface eth1 inet static
+  address 10.8.1.1
+  netmask 255.255.255.252
+  ```
+  
+- The Witch
+  ```shell
+  auto eth0
+  iface eth0 inet static
+  address 10.8.1.2
+  netmask 255.255.255.252
+  gateway 10.8.1.1
+  ```
+
+## Routing
+Setelah itu akan dilakukan routing pada GNS3 agar semua router, server, dan client akan saling terhubung.
+
+- The Reference
+  ```shell
+  route add -net 10.8.144.0 netmask 255.255.255.192 gw 10.8.160.2
+  route add -net 10.8.136.0 netmask 255.255.255.252 gw 10.8.160.2
+  route add -net 10.8.128.0 netmask 255.255.252.0 gw 10.8.160.2
+  route add -net 10.8.133.0 netmask 255.255.255.252 gw 10.8.160.2
+  route add -net 10.8.132.0 netmask 255.255.255.0 gw 10.8.160.2
+
+  route add -net 10.8.64.0 netmask 255.255.254.0 gw 10.8.66.2
+
+  route add -net 10.8.8.0 netmask 255.255.255.128 gw 10.8.32.2
+  route add -net 10.8.17.0 netmask 255.255.255.252 gw 10.8.32.2
+  route add -net 10.8.16.0 netmask 255.255.255.128 gw 10.8.32.2
+  route add -net 10.8.16.128 netmask 255.255.255.128 gw 10.8.32.2
+  route add -net 10.8.4.0 netmask 255.255.255.252 gw 10.8.32.2
+  route add -net 10.8.2.0 netmask 255.255.254.0 gw 10.8.32.2
+  route add -net 10.8.0.0 netmask 255.255.255.0 gw 10.8.32.2
+  route add -net 10.8.1.0 netmask 255.255.255.252 gw 10.8.32.2
+  ```
+  
+- The Order
+  ```shell
+  route add -net 0.0.0.0 netmask 0.0.0.0 gw 10.8.160.1
+
+  route add -net 10.8.128.0 netmask 255.255.252.0 gw 10.8.136.2
+  route add -net 10.8.133.0 netmask 255.255.255.252 gw 10.8.136.2
+  route add -net 10.8.132.0 netmask 255.255.255.0 gw 10.8.136.2
+  ```
+  
+- The Minister
+  ```shell
+  route add -net 0.0.0.0 netmask 0.0.0.0 gw 10.8.136.1
+
+  route add -net 10.8.132.0 netmask 255.255.255.0 gw 10.8.133.2
+  ```
+  
+- The Daundless
+  ```shell
+  route add -net 0.0.0.0 netmask 0.0.0.0 gw 10.8.133.1
+  ```
+  
+- The Magical
+  ```shell
+  route add -net 0.0.0.0 netmask 0.0.0.0 gw 10.8.66.1
+  ```
+  
+- The Instrument
+  ```shell
+  route add -net 0.0.0.0 netmask 0.0.0.0 gw 10.8.32.1
+
+  route add -net 10.8.16.0 netmask 255.255.255.128 gw 10.8.17.2
+  route add -net 10.8.16.128 netmask 255.255.255.128 gw 10.8.17.2
+
+  route add -net 10.8.2.0 netmask 255.255.254.0 gw 10.8.4.2
+  route add -net 10.8.0.0 netmask 255.255.255.0 gw 10.8.4.2
+  route add -net 10.8.1.0 netmask 255.255.255.252 gw 10.8.4.2
+  ```
+  
+- The Profound
+  ```shell
+  route add -net 0.0.0.0 netmask 0.0.0.0 gw 10.8.17.1
+  ```
+  
+- The Firefist
+  ```shell
+  route add -net 0.0.0.0 netmask 0.0.0.0 gw 10.8.4.1
+
+  route add -net 10.8.1.0 netmask 255.255.255.252 gw 10.8.0.2
+  ```
+  
+- The Queen
+  ```shell
+  route add -net 0.0.0.0 netmask 0.0.0.0 gw 10.8.0.1
+  ```
+  
+## Testing
+Testing dilakukan pada masing-masing client dan dikatakan berhasil jika client yang berjarak jauh dari router/server/client lain dapat melakukan ping pada router/server/client tersebut.
+![image](https://user-images.githubusercontent.com/67154280/203810610-01cf476c-c090-4674-bdd7-9b223bfb9ba2.png)
+
+![image](https://user-images.githubusercontent.com/67154280/203811201-a71d374c-e477-4b48-a272-1cc4dbec6a0f.png)
+
+![image](https://user-images.githubusercontent.com/67154280/203811313-6afaf95d-b1f4-44fc-9f07-97c6304df6cf.png)
 
 
