@@ -148,23 +148,60 @@ Hasil dari message tiap node.
 ## Penggabungan Subnet
 Kita melakukan penggabungan subnet-subnet paling bawah dalam topologi yaitu dimulai dari subnet yang paling jauh dengan cloud/nat hingga hanya memiliki 1 subnet (induk).
 
+- Kondisi Awal
+
 ![image](https://user-images.githubusercontent.com/67154280/203823347-02d5c9cb-6757-4cf5-ae5c-27098f1cbf16.png)
+
+- Penggabungan Pertama (Subnet B)
+</br>&nbsp;&nbsp;1. Subnet A2 dan A3 menghasilkan B1 dengan netmask /23 yaitu satu tingkat dari netmask terbesar yang diambil yaitu /24 dari A3.
+</br>&nbsp;&nbsp;2. Subnet A13 dan A14 menghasilkan B2 dengan netmask /23 yaitu satu tingkat dari netmask terbesar yang diambil yaitu /24 dari A13.
 
 ![image](https://user-images.githubusercontent.com/67154280/203823270-e0d73eb8-c4ec-4894-b6da-c0af20b3d6f6.png)
 
+- Penggabungan Kedua (Subnet C)
+</br>&nbsp;&nbsp;1. Subnet A1 dan B1 menghasilkan C1 dengan netmask /21 yaitu satu tingkat dari netmask terbesar yang diambil yaitu /22 dari A1.
+</br>&nbsp;&nbsp;2. Subnet A12 dan B2 menghasilkan C2 dengan netmask /22 yaitu satu tingkat dari netmask terbesar yang diambil yaitu /23 dari A12.
+</br>&nbsp;&nbsp;3. Subnet A9 dan A10 menghasilkan C3 dengan netmask /24 yaitu satu tingkat dari netmask terbesar yang diambil yaitu /25 dari A9.
+
 ![image](https://user-images.githubusercontent.com/67154280/203823201-235bbd58-e58f-471b-b2c1-4499d43ec977.png)
+
+- Penggabungan Ketiga (Subnet D)
+</br>&nbsp;&nbsp;1. Subnet C1 dan A4 menghasilkan D1 dengan netmask /20 yaitu satu tingkat dari netmask terbesar yang diambil yaitu /21 dari C1.
+</br>&nbsp;&nbsp;2. Subnet A11 dan C2 menghasilkan D2 dengan netmask /21 yaitu satu tingkat dari netmask terbesar yang diambil yaitu /22 dari C2.
+</br>&nbsp;&nbsp;3. Subnet A8 dan C3 menghasilkan D3 dengan netmask /23 yaitu satu tingkat dari netmask terbesar yang diambil yaitu /24 dari C3.
 
 ![image](https://user-images.githubusercontent.com/67154280/203823162-b3b40dff-eb85-4965-8084-321ea1fa9660.png)
 
+- Penggabungan Keempat (Subnet E)
+</br>&nbsp;&nbsp;1. Subnet D1 dan A5 menghasilkan E1 dengan netmask /19 yaitu satu tingkat dari netmask terbesar yang diambil yaitu /20 dari D1.
+</br>&nbsp;&nbsp;2. Subnet D2 dan A15 menghasilkan E2 dengan netmask /20 yaitu satu tingkat dari netmask terbesar yang diambil yaitu /21 dari D2.
+
 ![image](https://user-images.githubusercontent.com/67154280/203823114-561ce1e4-94e9-4241-8ed0-2b52da38952b.png)
+
+- Penggabungan Kelima (Subnet F)
+</br>&nbsp;&nbsp;1. Subnet D3 dan E2 menghasilkan F1 dengan netmask /19 yaitu satu tingkat dari netmask terbesar yang diambil yaitu /20 dari E2.
 
 ![image](https://user-images.githubusercontent.com/67154280/203823035-2818d042-6d18-4518-8d1f-84f3f60f4f31.png)
 
+- Penggabungan Keenam (Subnet G)
+</br>&nbsp;&nbsp;1. Subnet E1 dan A6 menghasilkan G1 dengan netmask /18 yaitu satu tingkat dari netmask terbesar yang diambil yaitu /19 dari E1.
+</br>&nbsp;&nbsp;2. Subnet A7 dan F1 menghasilkan G2 dengan netmask /18 yaitu satu tingkat dari netmask terbesar yang diambil yaitu /19 dari F1.
+</br>&nbsp;&nbsp;3. Subnet A17 dan A18 menghasilkan G3 dengan netmask /22 yaitu satu tingkat dari netmask terbesar yang diambil yaitu /23 dari A18.
+
 ![image](https://user-images.githubusercontent.com/67154280/203822948-f6075249-66ee-4691-b3db-121a4eef8410.png)
+
+- Penggabungan Ketujuh (Subnet H)
+</br>&nbsp;&nbsp;1. Subnet A16 dan G3 menghasilkan H1 dengan netmask /21 yaitu satu tingkat dari netmask terbesar yang diambil yaitu /22 dari G3.
 
 ![image](https://user-images.githubusercontent.com/67154280/203822821-58b60032-00ee-4b4a-bfea-cf9900509d4c.png)
 
+- Penggabungan Kedelapan (Subnet I)
+</br>&nbsp;&nbsp;1. Subnet G2 dan H1 menghasilkan I1 dengan netmask /17 yaitu satu tingkat dari netmask terbesar yang diambil yaitu /18 dari G2.
+
 ![image](https://user-images.githubusercontent.com/67154280/203822776-4b69f685-19b2-4a36-984f-810c31ea6098.png)
+
+- Penggabungan Kesembilan (Subnet J)
+</br>&nbsp;&nbsp;1. Subnet G1 dan I1 menghasilkan J1 dengan netmask /16 yaitu satu tingkat dari netmask terbesar yang diambil yaitu /17 dari I1.
 
 ![image](https://user-images.githubusercontent.com/67154280/203822575-b2f83376-14a9-466f-8bd2-6a28ad3047dd.png)
 
