@@ -618,3 +618,7 @@ Testing dilakukan pada masing-masing client dan dikatakan berhasil jika client y
 ![image](https://user-images.githubusercontent.com/67154280/203811313-6afaf95d-b1f4-44fc-9f07-97c6304df6cf.png)
 
 
+## Kendala
+- Saat melakukan ping di cpt, ada yang harus dilakukan 2-3x tidak bisa langsung 1x karena failed, nemun setelah dicoba lagi menjadi succesful
+
+
